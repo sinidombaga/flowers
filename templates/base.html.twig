@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Paradis des pétales!{% endblock %}</title>
+        {% block meta %}
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% endblock %}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+           
+        {% endblock %}
+    </head>
+    <body>
+        <header data-bs-theme="dark">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Paradis des pétales</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_home') }}">Accueil</a>
+              </li>
+              {% if app.user %}
+                <li class="nav-item">
+                  <a class="nav-link">Vous êtes connecté</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
+                </li>
+              {% else %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
+                </li>
+              {% endif %}
+            </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% endfor %}
+        {% block body %}{% endblock %}
+    <footer class="container">
+        <p>
+          &copy; 2017–2024 Paradis des pétales <a href="#">CGV</a> &middot;
+          <a href="#">CGU</a>
+        </p>
+      </footer>
+    </main>    
+    </body>
+</html>
+

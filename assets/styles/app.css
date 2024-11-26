@@ -1,0 +1,41 @@
+.intro {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-image: url(../Images/banniere.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  width: 100%;
+}
+.intro-title {
+  color: #fff;
+}
+.intro-text {
+  color: blueviolet;
+  font-family: roboto;
+  justify-content: center;
+  justify-items: center;
+  margin-top: -10%;
+}
+.intro-parag {
+  font-family: roboto, sans-serif;
+  font-size: calc(1rem + 0.5vw);
+  align-items: center;
+  color: #fff;
+  justify-content: center;
+  justify-items: center;
+  margin-top: -10%;
+}
+
+.sect-2 {
+  background-color: khaki;
+}
+.compo-text {
+  color: blueviolet;
+  font-family: roboto;
+  justify-content: center;
+  justify-items: center;
+}
