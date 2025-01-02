@@ -87,4 +87,14 @@ class FlowersRepository extends ServiceEntityRepository
         $this->entityManager->remove($flower);
         $this->entityManager->flush();
     }
+
+    public function findSample(): array
+    {
+        $flowers= $this->createQueryBuilder('c')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult();
+        shuffle($flowers);
+        return array_slice($flowers,0,3);
+    }
 }
