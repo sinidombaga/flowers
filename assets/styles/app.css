@@ -1,3 +1,7 @@
+a {
+  color: black;
+  text-decoration: none;
+}
 .intro {
   display: flex;
 
@@ -40,8 +44,15 @@
   justify-items: center;
 }
 
+.card-header {
+}
+
 .card {
-  margin: 5% 0%;
+  width: 330px;
+  margin: 10px;
+  text-align: center;
+}
+.card-header img {
 }
 
 .card-body {
