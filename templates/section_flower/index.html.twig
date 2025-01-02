@@ -6,7 +6,7 @@
     {% for flower in flowers%}
         <!---card-->
         <div class="card">
-            <a href="#!">
+            <a href="{{path('app_flowers')}}">
           <!--card img-->
           <div class="card-header">
             <img class="img-fluid" src="{{asset('build/images/'~ flower.image)}}" alt="Card image cap">

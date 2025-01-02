@@ -13,7 +13,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 class CreateFlowerCommand extends Command
 {
     protected static $defaultName = 'app:create-flower';
-    protected static $defaultDescription = 'Create four flowers';
+    protected static $defaultDescription = 'Create six flowers';
 
     private $entityManager;
 
@@ -36,10 +36,12 @@ class CreateFlowerCommand extends Command
         $io = new SymfonyStyle($input, $output);
 
         $flower = [
-            ['name' => 'première', 'price' => 20,'description'=>'fleur 1','image'=>'fleur.jpeg'],
-             ['name' => 'deuxième', 'price' => 20,'description'=>'fleur 2','image'=>'fleur.jpeg'],
-              ['name' => 'troisième', 'price' => 20,'description'=>'fleur 3','image'=>'fleur.jpeg'],
-               ['name' => 'quatrième', 'price' => 20,'description'=>'fleur 4','image'=>'fleur.jpeg'],
+            ['name' => 'Nos fleurs de France', 'price' => 20,'description'=>'fleur 1','image'=>'fleur-1.jpeg'],
+             ['name' => 'Nos Coffrets cadeaux', 'price' => 20,'description'=>'fleur 4','image'=>'fleur-4.jpg'],
+              ['name' => 'Nos Collection Astrologiques', 'price' => 20,'description'=>'fleur 5','image'=>'fleur-5.jpg'],
+               ['name' => 'Nos Brassés de roses', 'price' => 20,'description'=>'fleur 6','image'=>'fleur-6.jpg'],
+               ['name' => 'Nos Bouquets de fleurs', 'price' => 20,'description'=>'fleur 20','image'=>'fleur-20.jpg'],
+               ['name' => 'Nos Bouquets danniversaire', 'price' => 20,'description'=>'fleur 21','image'=>'fleur-21.jpg'],
         ];
    
 
