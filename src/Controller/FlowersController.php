@@ -57,7 +57,21 @@ class FlowersController extends AbstractController
         ]);
     }
 
-    
+     #[Route('/flowers/{id_category}', name: 'flowers_show_by_category')]
+    public function showByCategory(int $id_category, FlowersRepository $flowersRepository): Response
+    {
+        $flowers = $flowersRepository->findByCategory($id_category);
+
+        if (!$flowers) {
+            throw $this->createNotFoundException('The flower does not exist');
+        }
+
+        return $this->render('flowers/showByCategory.html.twig', [
+            'flowers' => $flowers,
+        ]);
+    }
+
+
    #[Route('/updateFlowers/{id}', name: 'flowers_update')]
     public function update(int $id, Request $request, FlowersRepository $flowersRepository, EntityManagerInterface $entityManager): Response
     {

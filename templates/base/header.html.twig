@@ -1,35 +1,52 @@
- <header data-bs-theme="dark">
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse"
-            aria-controls="navbarCollapse"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-              <li class="nav-item">
-                <a class="nav-link" href="{{ path('app_home') }}">Accueil</a>
-              </li>
-              {% if app.user %}
-                <li class="nav-item">
-                  <a class="nav-link">Vous êtes connecté</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
-                </li>
-              {% else %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
-                </li>
-              {% endif %}
-            </ul>
+<header>
+       <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+  <div class="container-fluid w-75 mx-auto ">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+            <a class="navbar-brand" href="{{ path('app_home') }}">Flowers Paradise</a>
+            
+   
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav me-auto d-flex align-items-center ">
+       <li class="nav-item mx-5">
+          <a class="nav-link" href="{{ path('app_home') }}">Fleurs</a>
+        </li>
+        <li class="nav-item dropdown mx-5">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Catégories</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="{{ path('app_home') }}">Plafonds</a>
+            <a class="dropdown-item" href="{{ path('app_home') }}">Doublages</a>
+            <a class="dropdown-item" href="{{ path('app_home') }}">Cloisons</a>
+            <a class="dropdown-item" href="{{ path('app_home') }}">Informations techniques</a>
             </div>
-          </div>
+        </li>
+         <li class="nav-item mx-5">
+          <a class="nav-link" href="{{ path('app_home') }}">Commentaires</a>
+        </li>
+            <li class="nav-item mx-5">
+          <a class="nav-link" href="{{ path('app_home') }}">Contacts</a>
+        </li>
+                {% if app.user %}
+                    <li class="nav-item">
+                        <a class="nav-link">Vous êtes connecté</a>
+                    </li>
+                {% endif %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('build/images/profil.png') }}" alt="profil"></a>
+                    <div class="dropdown-menu">
+                        {% if app.user %}
+                            <a class="dropdown-item" href="{{ path('app_account') }}">Compte</a>
+                            <a class="dropdown-item" href="{{ path('app_logout') }}">Déconnexion</a>
+                        {% else %}
+                            <a class="dropdown-item" href="{{ path('app_login') }}">Connexion</a>
+                            <a class="dropdown-item" href="{{ path('app_register') }}">Inscription</a>
+                        {% endif %}
+                    </div>
+                </li>
+            </ul>
         </div>
-      </nav>
-    </header>
+    </nav>
+  
+</header>

@@ -91,10 +91,19 @@ class FlowersRepository extends ServiceEntityRepository
     public function findSample(): array
     {
         $flowers= $this->createQueryBuilder('c')
-            ->setMaxResults(3)
+            ->setMaxResults(6)
             ->getQuery()
             ->getResult();
         shuffle($flowers);
-        return array_slice($flowers,0,3);
+        return array_slice($flowers,0,6);
+    }
+
+    public function findByCategory(int $categoryId): array
+    {
+               return $this->createQueryBuilder('f')
+            ->andWhere('f.category = :categoryId')
+            ->setParameter('categoryId', $categoryId)
+            ->getQuery()
+            ->getResult();
     }
 }

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gallery of flowers{% endblock %}
+
+{% block body %}
+
+ <div class="container my-5">
+  <div class="d-flex justify-content-center">
+    <h3>Nos Compositions by</3>
+  </div>
+  <div class="d-flex flex-row my-3 flex-wrap justify-content-evenly">
+
+    {% for flower in flowers%}
+        <!---card-->
+        <div class="card">
+            <a href="{{path('app_flowers')}}">
+          <!--card img-->
+          <div class="card-header">
+            <img class="img-fluid" src="{{asset('build/images/'~ flower.image)}}" alt="Card image cap">
+          </div>
+          <!--card content-->
+          <div class="card-body">
+            <!--card title-->
+            <h4 class="card-title">{{flower.name}}</h4>
+            <!--card text-->
+            <p class="crd-text">{{flower.description}}</p>
+            <!--card-->
+            <!----<button class="btn btn-primary" role="button">Découvrir</button>-->
+          </div>
+            </a>
+         </div>
+      {% endfor %}
+   </div>
+    
+    </div>
+</div>
+
+{% endblock %}

@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
+        
         <title>{% block title %}Paradis des pétales!{% endblock %}</title>
         {% block meta %}
+            <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
-            <script src="https://kit.fontawesome.com/d4fcf78874.js" crossorigin="anonymous"></script>
+            <meta name="description" content="Paradis des pétales">          
         {% endblock %}
         {% block stylesheets %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
-           
+            <script src=" https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script> 
+           <script src="https://kit.fontawesome.com/d4fcf78874.js" crossorigin="anonymous"></script>
         {% endblock %}
     </head>
     <body>
-      {%  include "base/header.html.twig" %}
+     {%  include "base/header.html.twig" %}
        
     {% for label, messages in app.flashes %}
         {% for message in messages %}
@@ -28,6 +30,7 @@
         {% endfor %}
     {% endfor %}
         {% block body %}{% endblock %}
+         {%  include "base/customers.html.twig" %}
       {%  include "base/footer.html.twig" %}
   </body>
 </html>

@@ -2,8 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 import "./styles/app.css";
 // Import Bootstrap JavaScript
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-
+import "@popperjs/core";
 // Import custom global JavaScript
 //import "./js/global.js";a effacer
 /*

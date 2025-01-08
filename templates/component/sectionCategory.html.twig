@@ -1,0 +1,27 @@
+<section>
+    <div class="container text-center py-2 mt-2" >
+        <h1> Nos Categories de Fleurs </h1>
+        <div class=" d-flex justify-content-between">
+            {%  for category in categories %}
+            <div class="card">
+            <a href="{{ path('flowers_show_by_category', { 'id_category': category.id }) }}"> 
+
+          <!--card img-->
+          <div class="card-header">
+            <img class="img-fluid" src="{{asset('build/images/'~ category.image)}}" alt="Card image cap">
+          </div>
+          <!--card content-->
+          <div class="card-body">
+            <!--card title-->
+            <h4 class="card-title">{{category.name}}</h4>
+            <!--card text-->
+            <p class="crd-text">{{category.description}}</p>
+            <!--card-->
+            <!----<button class="btn btn-primary" role="button">Découvrir</button>-->
+          </div>
+            </a>
+         </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

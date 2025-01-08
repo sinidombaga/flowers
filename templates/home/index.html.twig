@@ -4,6 +4,7 @@
 
 {% block body %}
 {% include "component/SectionIntro.html.twig" %}
+{{ render(controller('App\\Controller\\CategoryController::index')) }}
 
 {{ render(controller('App\\Controller\\SectionFlowerController::index')) }}
 

@@ -2,6 +2,25 @@ a {
   color: black;
   text-decoration: none;
 }
+
+.navbar-brand {
+  font-size: 35px;
+  color: #3bb143;
+  /*color:#55d737;*/
+}
+
+ul.navbar-nav {
+  margin-right: 80px !important;
+}
+
+@media (min-width: 992px) {
+  .navbar-collapse {
+    flex-basis: 50% !important;
+    flex-grow: 0 !important;
+    justify-content: center !important;
+    margin: 0 auto; /* Center the navbar-collapse */
+  }
+}
 .intro {
   display: flex;
 
@@ -45,6 +64,11 @@ a {
 }
 
 .card-header {
+  height: 320px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card {
@@ -53,6 +77,8 @@ a {
   text-align: center;
 }
 .card-header img {
+  height: 250px;
+  width: auto;
 }
 
 .card-body {
