@@ -43,7 +43,7 @@ class FlowersController extends AbstractController
     }
     
 
-    #[Route('/flowers/{id}', name: 'flowers_show')]
+    #[Route('/flowers/findById{id}', name: 'flowers_show')]
     public function show(int $id, FlowersRepository $flowersRepository): Response
     {
         $flower = $flowersRepository->findById($id);
@@ -57,7 +57,7 @@ class FlowersController extends AbstractController
         ]);
     }
 
-     #[Route('/flowers/{id_category}', name: 'flowers_show_by_category')]
+     #[Route('/flowers/byCategory{id_category}', name: 'flowers_show_by_category')]
     public function showByCategory(int $id_category, FlowersRepository $flowersRepository): Response
     {
         $flowers = $flowersRepository->findByCategory($id_category);

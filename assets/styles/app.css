@@ -85,3 +85,11 @@ ul.navbar-nav {
   margin: 0% 0% 0% 3%;
   padding: 6% 0%;
 }
+.col-md-4 img {
+  background-color: blue;
+  height: auto;
+  width: 100%;
+}
+.container my-5 {
+  background-color: crimson;
+}
