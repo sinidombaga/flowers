@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Comment;
 use App\Entity\Flowers;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -26,7 +27,7 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Flowers');
+            ->setTitle('<a href="' . $this->generateUrl('app_home') . '">Flowers</a>');
     }
 
     public function configureMenuItems(): iterable
@@ -34,5 +35,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
          yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-list', User::class);
          yield MenuItem::linkToCrud('Fleurs', 'fas fa-list', Flowers::class);
+         yield MenuItem::linkToCrud('Commentaires', 'fas fa-list', Comment::class);
     }
 }

@@ -1,6 +1,6 @@
-<section>
+<section class="back-color-sectionFlower">
   <div class="d-flex justify-content-center">
-    <h3>Nos Compositions</3>
+    <h3>Nos Sélections de bouquets</3>
   </div>
   <div class="d-flex flex-row my-3 flex-wrap justify-content-evenly">
     {% for flower in flowers%}
@@ -9,7 +9,7 @@
             <a href="{{path('app_flowers')}}">
           <!--card img-->
           <div class="card-header">
-            <img class="img-fluid" src="{{asset('build/images/'~ flower.image)}}" alt="Card image cap">
+            <img class="img-fluid" src="{{asset('build/images/' ~ flower.image)}}" alt="Card image cap">
           </div>
           <!--card content-->
           <div class="card-body">

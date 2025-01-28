@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Paradis des Pétales{% endblock %}
+
+{% block body %}
+<div class="flower-section">
+    <div class="flower-img">
+        <img src="{{ asset('build/images/' ~ flower.image) }}" alt="{{ flower.name }}">
+    </div>
+    <div class="flower-detail">
+        <h1> {{ flower.name }}</h1>
+        <p class="flower-price">{{ flower.price }}</p>
+        <p class="flower-description">{{ flower.description }}</p>
+    </div>
+</div>
+
+
+{% endblock %}

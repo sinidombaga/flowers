@@ -22,6 +22,7 @@ ul.navbar-nav {
   }
 }
 .intro {
+  position: relative;
   display: flex;
 
   flex-direction: column;
@@ -39,6 +40,8 @@ ul.navbar-nav {
 .intro-text {
   color: blueviolet;
   font-family: roboto;
+  font-weight: 500;
+  font-style: italic;
   justify-content: center;
   justify-items: center;
   margin-top: -10%;
@@ -79,6 +82,32 @@ ul.navbar-nav {
 .card-header img {
   height: 250px;
   width: auto;
+  object-fit: cover;
+  object-position: center center;
+  transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+card {
+  width: 40%;
+  height: 250px;
+  position: ;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 10px 20px rgb(40, 40, 40);
+}
+card:hover {
+  opacity: 0.8;
+}
+card-header {
+  position: ;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+card-header img {
+  height: 100%;
+  width: 100%;
 }
 
 .card-body {
@@ -89,7 +118,26 @@ ul.navbar-nav {
   background-color: blue;
   height: auto;
   width: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+card-body {
+  position: ;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
 .container my-5 {
   background-color: crimson;
+}
+.back-color-sectionFlower {
+  background-color: burlywood;
+}
+.back-color-sectionCategory {
+  background-color: bisque;
 }

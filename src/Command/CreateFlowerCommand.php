@@ -37,7 +37,8 @@ class CreateFlowerCommand extends Command
         $flower = [
             ['name' => 'Rose ', 'price' => 20,'description'=>'fleur 1','image'=>'fleur-18.jpg', 'category_id'=>1],
              ['name' => 'Petale', 'price' => 20,'description'=>'fleur 4','image'=>'fleur-19.jpg', 'category_id'=>1],
-              ['name' => 'Croix', 'price' => 20,'description'=>'fleur 5','image'=>'fleur-17.jpg' , 'category_id'=>1],
+                ['name' => 'Croix', 'price' => 20,'description'=>'fleur 5','image'=>'fleur-17.jpg' , 'category_id'=>1],
+                    ['name' => 'Croix', 'price' => 20,'description'=>'Rose fatale','image'=>'fleur-10.jpg' , 'category_id'=>1],
         
         ];
 

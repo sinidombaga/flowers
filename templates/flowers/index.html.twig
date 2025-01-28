@@ -1,22 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Gallery of flowers{% endblock %}
+{% block title %}Nos sélections de bouquets{% endblock %}
 
 {% block body %}
 
  <div class="container my-5">
   <div class="d-flex justify-content-center">
-    <h3>Nos Compositions</3>
+    <h2>Nos sélections de bouquets</2>
   </div>
   <div class="d-flex flex-row my-3 flex-wrap justify-content-evenly">
 
     {% for flower in flowers%}
         <!---card-->
         <div class="card">
-            <a href="{{path('app_flowers')}}">
+           <a href="{{ path('flowers_show', {id: flower.id}) }}">
           <!--card img-->
           <div class="card-header">
-            <img class="img-fluid" src="{{asset('build/images/'~ flower.image)}}" alt="Card image cap">
+            <img class="img-fluid" src="{{asset('build/images/' ~ flower.image)}}" alt="Card image cap">
           </div>
           <!--card content-->
           <div class="card-body">
@@ -25,7 +25,7 @@
             <!--card text-->
             <p class="crd-text">{{flower.description}}</p>
             <!--card-->
-            <!----<button class="btn btn-primary" role="button">Découvrir</button>-->
+            <button class="btn btn-success" role="button">Découvrir</button>
           </div>
             </a>
          </div>
